@@ -4,7 +4,9 @@ const MainPage = () => {
   return (
     <div>
       <h1>Hello Main Page!</h1>
-      <Link to="/products/list">리스트로 이동</Link>
+      <Link to="/products/list">상품 페이지 이동</Link>
+      <br />
+      <Link to="/todos/list">todo 페이지 이동</Link>
     </div>
   );
 };

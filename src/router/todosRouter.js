@@ -1,12 +1,11 @@
 import { lazy, Suspense } from 'react';
 
-const Loading = <div>Loding...</div>;
-const Add = lazy(() => import('../pages/products/AddPage'));
-const Read = lazy(() => import('../pages/products/ReadPage'));
-const List = lazy(() => import('../pages/products/ListPage'));
+const Loading = <div>Loading...</div>;
+const List = lazy(() => import('../pages/todos/ListPage'));
+const Read = lazy(() => import('../pages/todos/ReadPage'));
+const Add = lazy(() => import('../pages/todos/AddPage'));
 
-// children 안에서는 / 빼야 부모 경로(/products)가 자동으로 붙는다
-const productsRouter = () => [
+const todoRouter = () => [
   {
     path: '',
     element: (
@@ -16,7 +15,7 @@ const productsRouter = () => [
     ),
   },
   {
-    path: 'list', // 부모 기준 상대 경로
+    path: 'list',
     element: (
       <Suspense fallback={Loading}>
         <List />
@@ -41,4 +40,4 @@ const productsRouter = () => [
   },
 ];
 
-export default productsRouter;
+export default todoRouter;

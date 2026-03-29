@@ -1,6 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom';
 import productsRouter from './productsRouter';
 import { lazy, Suspense } from 'react';
+import todoRouter from './todosRouter';
 
 const Loading = <div>Loading...</div>;
 const Main = lazy(() => import('../pages/MainPage'));
@@ -18,6 +19,10 @@ const root = createBrowserRouter([
   {
     path: '/products', // 절대 경로(루트 기준)
     children: productsRouter(),
+  },
+  {
+    path: '/todos',
+    children: todoRouter(),
   },
 ]);
 
