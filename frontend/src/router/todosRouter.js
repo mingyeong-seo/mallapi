@@ -23,7 +23,7 @@ const todoRouter = () => [
     ),
   },
   {
-    path: 'read',
+    path: 'read/:tno',
     element: (
       <Suspense fallback={Loading}>
         <Read />
